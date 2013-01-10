@@ -1,33 +1,38 @@
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-		width = 1060 - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 100, left: 50},
+	margin2 = {top: 430, right: 10, bottom: 20, left: 50},
+	width = 1060 - margin.left - margin.right,
+	height = 500 - margin.top - margin.bottom,
+	height2 = 500 - margin2.top - margin2.bottom;
 
 var parseDate = d3.time.format("%Y%m").parse;
 
-var x = d3.time.scale()
-		.range([0, width]);
+var x = d3.time.scale().range([0, width]),
+	x2 = d3.time.scale().range([0, width]),
+	y = d3.scale.linear().range([height, 0]),
+	y2 = d3.scale.linear().range([height2, 0]);
 
-var y = d3.scale.linear()
-		.range([height, 0]);
-
-var xAxis = d3.svg.axis()
-		.scale(x)
-		.orient("bottom");
-
-var yAxis = d3.svg.axis()
-		.scale(y)
-		.orient("left");
+var xAxis = d3.svg.axis().scale(x).orient("bottom"),
+	xAxis2 = d3.svg.axis().scale(x2).orient('bottom'),
+	yAxis = d3.svg.axis().scale(y).orient("left");
 
 var line = d3.svg.line()
 		.x(function(d) { return x(d.date); })
-		.y(function(d) { return y(d.v); });
+		.y(function(d) { return y(d.v); }),
+	line2 = d3.svg.line()
+		.x(function(d) { return x2(d.date); })
+		.y(function(d) { return y2(d.v); });
 
 var svg = d3.select("#lineGraph").append("svg")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
-	.append("g")
+	
+var focus = svg.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 		.attr('id','transform');
+
+var context = svg.append("g")
+		.attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
 
 var tooltip = d3.select("body")
 		.append("div")
@@ -35,20 +40,18 @@ var tooltip = d3.select("body")
 
 var brush = d3.svg.brush()
 		.x(x)
-		.y(y)
 		.on("brush", brush);
 
 function brush() {
-	//x.domain(brush.empty() ? x2.domain() : brush.extent());
+	x.domain(brush.empty() ? x2.domain() : brush.extent());
 	//focus.select("path").attr("d", area);
-	//focus.select(".x.axis").call(xAxis);
+	focus.select(".x.axis").call(xAxis);
 }
 
 //loads unemployment data in rawdata and attaches a date object 
 var rawData;
 d3.json("serieses.json", function(error, input) {
 	input.forEach(function(d) {
-		console.log(d);
 		d['data'].forEach(function(d) {
 			d.date = parseDate(d.t);
 		})
@@ -69,17 +72,17 @@ function draw(minDate, maxDate) {
 	while (wrapper.lastChild) {
  	   wrapper.removeChild(wrapper.lastChild);
 	}
-
 	x.domain([minDate, maxDate]);
+	x2.domain([minDate, maxDate]);
 	y.domain([0,15]);
+	y2.domain([3,10]);
 
-	svg.append("g")
+	focus.append("g")
 			.attr("class", "x axis")
-			.attr("viewport-fill", "red")
 			.attr("transform", "translate(0," + height + ")")
 			.call(xAxis);
 			
-	svg.append("g")			
+	focus.append("g")			
 			.attr("class", "y axis")
 			.call(yAxis)
 		.append("text")
@@ -87,7 +90,12 @@ function draw(minDate, maxDate) {
 			.attr("y", 6)
 			.attr("dy", ".71em")
 			.style("text-anchor", "end")
-			.text("Unemployment Rate (%)")	
+			.text("Unemployment Rate (%)");
+
+	context.append("g")
+			.attr("class", "x axis")
+			.attr("transform", "translate(0," + height2 + ")")
+			.call(xAxis2);
 
 	lineArray = [];
 	for (var i = 0; i < rawData.length; i++){
@@ -96,10 +104,12 @@ function draw(minDate, maxDate) {
 
 	updateGraph();
 
-	svg.append("g")
+	context.append("g")
 		.attr("class", "x brush")
 		.call(brush)
-	.selectAll("rect");
+	.selectAll("rect")
+		.attr("y", -6)
+		.attr("height", height2 + 7);
 }
 
 function drawLine(series, minDate, maxDate){
@@ -110,7 +120,17 @@ function drawLine(series, minDate, maxDate){
 		}
 	}
 	
-	return svg.append("path")
+	//draws rate on small display iff it is the over all rate 
+	if (isOverallRate(series)){
+		context.append("path")
+			.datum(data)
+			.attr("class", "line")
+			.attr("d", line2)
+			.attr("stroke", 'black')
+			.attr('stroke-width', '1.5');
+	}
+
+	return focus.append("path")
 		.datum(data)
 		.attr("class", "line")
 		.attr("d", line)
@@ -171,7 +191,6 @@ function setLineColor(series, line, red, blue){
 		.on('mouseover', function(){		 		
 			tooltip.text(series['description']);
 		 	tooltip.style("visibility", "visible");
-		 	console.log(series);
 			d3.select(this)
 				.attr('stroke-opacity', opacity + .6)
 				.attr('stroke-width', '2.5')
