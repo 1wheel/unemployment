@@ -22,7 +22,7 @@ body {
 }
 
 .brush .extent {
-  stroke: #fff;
+  stroke: lightgrey;
   fill-opacity: .125;
   shape-rendering: crispEdges;
 }

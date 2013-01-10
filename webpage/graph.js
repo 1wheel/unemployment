@@ -39,13 +39,17 @@ var tooltip = d3.select("body")
 		.attr("id","tooltip");
 
 var brush = d3.svg.brush()
-		.x(x)
+		.x(x2)
 		.on("brush", brush);
 
 function brush() {
 	x.domain(brush.empty() ? x2.domain() : brush.extent());
 	//focus.select("path").attr("d", area);
-	focus.select(".x.axis").call(xAxis);
+	for (var i = 0; i < lineArray.length; i++){
+		lineArray[i].attr("d", line);
+	}
+
+	focus.select("#xaxis").call(xAxis);
 }
 
 //loads unemployment data in rawdata and attaches a date object 
@@ -79,6 +83,7 @@ function draw(minDate, maxDate) {
 
 	focus.append("g")
 			.attr("class", "x axis")
+			.attr("id", 'xaxis')
 			.attr("transform", "translate(0," + height + ")")
 			.call(xAxis);
 			
@@ -131,6 +136,7 @@ function drawLine(series, minDate, maxDate){
 	}
 
 	return focus.append("path")
+		.attr("id", series['id'])
 		.datum(data)
 		.attr("class", "line")
 		.attr("d", line)
@@ -141,16 +147,36 @@ function drawLine(series, minDate, maxDate){
 }
 
 function setColors(red, blue){
+	var maxY = 0;
+	for (var i = 0; i < lineArray.length; i++){
+		var series = rawData[i];
+		if (isSubset(series, red)['exactMatch'] || isSubset(series, blue)['exactMatch'] || isOverallRate(series)){
+			console.log(series);
+			seriesMaxY = 0;
+			for (var j = 0; j < series['data'].length; j++){
+				seriesMaxY = Math.max(seriesMaxY, series['data'][j]['v'])
+			}
+			maxY = Math.max(maxY, seriesMaxY);
+		}
+	}
+	console.log(maxY);
+	y.domain([0,maxY]);
+	line = d3.svg.line()
+		.x(function(d) { return x(d.date); })
+		.y(function(d) { return y(d.v); })
+	focus.select(".y.axis").call(yAxis);
+
 	for (var i = 0; i < lineArray.length; i++){
 		setLineColor(rawData[i], lineArray[i], red, blue);
 	}
 }
 
-function setLineColor(series, line, red, blue){
+function setLineColor(series, drawnLine, red, blue){
 	var isRed = isSubset(series, red);
 	var isBlue = isSubset(series, blue);
 	var lineColor;
 	var opacity;
+	var width;
 	if (isOverallRate(series)){
 		//line is overall employment rate, make black and bold
 		lineColor = 'black';
@@ -160,47 +186,49 @@ function setLineColor(series, line, red, blue){
 		//otherwise set to another color and thickness
 		if (isBlue.subset){
 			if (isRed.subset){
-				//line is purple
 				lineColor = 'purple';
 			}
 			else{
-				//line is blue
 				lineColor = 'blue';
 			}
 		}
 		else{
 			if (isRed.subset){
-				//line is red
 				lineColor = 'red';
 			}
 			else{
-				//line is grey
 				lineColor = 'grey';
 			}
-		}
-
+		}	
 		//solid line iff exact match to selection or overall rate
-		opacity = (isBlue.exactMatch || isRed.exactMatch) ? .8 : .1;
-		width = (opacity == .8) ? 1.5 : 2.3; 
+		opacity = (isBlue.exactMatch || isRed.exactMatch) ? 1 : .1;
 	}
+	opacity = opacity - ((lineColor == 'grey') ? .03 : 0);
+	width = (opacity == 1) ? 3.0 : 1.5; 
 
-	line.attr('stroke', lineColor)
-		.attr('stroke-opacity', opacity)
-
-	line
-		.on('mouseover', function(){		 		
-			tooltip.text(series['description']);
-		 	tooltip.style("visibility", "visible");
-			d3.select(this)
-				.attr('stroke-opacity', opacity + .6)
-				.attr('stroke-width', '2.5')
-			;})
-
+	drawnLine		
+		.on('mouseover', function(){	
+			if (lineColor != 'grey'){	 		
+				tooltip.text(series['description']);
+			 	tooltip.style("visibility", "visible");
+				d3.select(this)
+					.attr('stroke-opacity', opacity + .6)
+					.attr('stroke-width', width + 1);
+				};})
 		.on('mouseout', function(){
 		 	tooltip.style("visibility", "hidden");
 			d3.select(this)
 				.attr('stroke-opacity', opacity)
-				.attr('stroke-width', '1.5');});
+				.attr('stroke-width', width);})
+		.transition()
+			.duration(500)
+			.attr('stroke', lineColor)
+			.attr('stroke-opacity', opacity)
+			.attr('stroke-width', width)
+			.attr("d", line);
+			console.log(width);
+
+
 }
 
 //rv.subset is true if it is subset
