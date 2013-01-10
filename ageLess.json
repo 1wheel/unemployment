@@ -1,0 +1,137 @@
+[
+    {
+        "description": "(Unadj) Unemployment Rate",
+        "age": 0,
+        "sex": 0,
+        "race": 0,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000000"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Men",
+        "age": 0,
+        "sex": 1,
+        "race": 0,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000001"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Women",
+        "age": 0,
+        "sex": 2,
+        "race": 0,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000002"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - White",
+        "age": 0,
+        "sex": 0,
+        "race": 1,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000003"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - White Men",
+        "age": 0,
+        "sex": 1,
+        "race": 1,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000004"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - White Women",
+        "age": 0,
+        "sex": 2,
+        "race": 1,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000005"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Black or African American",
+        "age": 0,
+        "sex": 0,
+        "race": 3,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000006"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Black or African American Men",
+        "age": 0,
+        "sex": 1,
+        "race": 3,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000007"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Black or African American Women",
+        "age": 0,
+        "sex": 2,
+        "race": 3,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000008"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Hispanic or Latino",
+        "age": 0,
+        "sex": 0,
+        "race": 5,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000009"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Hispanic or Latino Men",
+        "age": 0,
+        "sex": 1,
+        "race": 5,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000010"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Hispanic or Latino Women",
+        "age": 0,
+        "sex": 2,
+        "race": 5,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04000011"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Asian",
+        "age": 0,
+        "sex": 0,
+        "race": 4,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04032183"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Asian Men",
+        "age": 0,
+        "sex": 1,
+        "race": 4,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04032301"
+    },
+    {
+        "description": "(Unadj) Unemployment Rate - Asian Women",
+        "age": 0,
+        "sex": 2,
+        "race": 4,
+        "edu": 0,
+        "data": [],
+        "id": "LNU04032342"
+    }
+]

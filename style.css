@@ -1,0 +1,110 @@
+
+body {
+  font: 10px sans-serif;
+  text-align: center;
+}
+
+.axis path,
+.axis line {
+  fill: white;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+}
+
+.y.axis {
+}
+
+.line {
+  fill: none;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.blacklink{
+  color:black;
+  text-decoration:none;
+  font-size: 130%;
+}
+
+#graphTitle{
+  font-size: 250%;
+  float:left;
+  margin-left: 40px
+}
+
+#footer{
+   float:right;
+   margin-right: 30px
+}
+#tooltip {
+  position:absolute;
+  z-index: 10;
+  visibility: hidden;
+  background-color: white;
+  font-size: 110%;
+  box-shadow: 2px 2px 3px #000;
+  border: 1px solid grey;
+}
+
+#container{
+  width: 1060px;
+  margin-left: auto ;
+  margin-right: auto ;
+
+}
+
+#blue .radioBox{
+  float:left;
+}
+
+#blueSex{
+  margin-left: 40px
+}
+
+#red .radioBox{
+  float:right;
+}
+
+.radioHeader{
+  font-size: 130%;
+  font-weight: bold;
+  text-align: center;
+}
+.ui-button-text:hover{
+	text-decoration: underline;
+}
+
+.ui-button.ui-state-active .ui-button-text{
+	color:white !important;
+}
+
+.ui-button.ui-state-default{
+    background: #d2d9e0;
+    border:1px solid white;
+}
+
+#blue .ui-button-text{
+    color: #3b86c4;
+}
+
+#blue .ui-button.ui-state-active{
+    background: steelblue;
+    border:1px solid white;
+}
+
+#red .ui-button-text{
+    color: rgb(195,57,57);
+}
+
+#red .ui-button.ui-state-active{
+    background: rgb(195,57,57);
+    border:1px solid white;
+}
+

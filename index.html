@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<body>
+	<div id = 'container'>
+		<span>
+			<span id = "graphTitle">Unemployment Rates</span>
+				<div id = 'footer'>
+				<a class= "blacklink" href="http://www.roadtolarissa.com/Unemployment-Rates">about</a>
+		 		<code>|</code> 
+		 		<a class = "blacklink" href="http://www.roadtolarissa.com">blog</a> 
+		 		<code>|</code> 
+		 		<a class= "blacklink" href="https://github.com/1wheel/unemployment-rates/">github</a>
+		 	</div>
+		</span>
+		<div id = "lineGraph"></div>
+		<div id = "graphSettings">
+			<div id = 'blue'>				
+				<div class = 'radioBox' id = 'blueSex'>
+					<span class = 'radioHeader'>Sex</span>
+					<input type="radio" id="bsA" name="b_sex" value="0" />			<label for="bsA">All</label>
+					<input type="radio" id="bsm" name="b_sex" value="1" />			<label for="bsm">Men</label>
+					<input type="radio" id="bsw" name="b_sex" value="2"checked/>	<label for="bsw">Women</label>
+				</div>
+
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Race</span>
+					<input type="radio" id="brA" name="b_race" value="0" checked/>	<label for="brA">All</label>
+					<input type="radio" id="brw" name="b_race" value="1" />			<label for="brw">White</label>
+					<input type="radio" id="brb" name="b_race" value="3"/>			<label for="brb">Black</label>
+					<input type="radio" id="brh" name="b_race" value="5"/>			<label for="brh">Hispanic</label>
+					<input type="radio" id="bra" name="b_race" value="4"/>			<label for="bra">Asian</label>
+				</div>
+
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Age</span>
+					<input type="radio" id="baA" name="b_age" value="0" checked/>	<label for="baA">All</label>
+					<input type="radio" id="bay" name="b_age" value="10" />			<label for="bay">16-24</label>
+					<input type="radio" id="bao" name="b_age" value="28"/>			<label for="bao">25+</label>
+				</div>
+
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Education</span>
+					<input type="radio" id="beA" name="b_edu" value="0" checked/>	<label for="beA">All</label>
+					<input type="radio" id="ben" name="b_edu" value="30" />			<label for="ben">No HS Diploma</label>
+					<input type="radio" id="beh" name="b_edu" value="31"/>			<label for="beh">Only HS</label>
+					<input type="radio" id="bea" name="b_edu" value="32"/>			<label for="bea">Some College</label>
+					<input type="radio" id="beb" name="b_edu" value="33"/>			<label for="beb">Bachelor's >=</label>
+				</div>
+
+			</div>
+			<div id = 'red'>
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Education</span>
+					<input type="radio" id="reA" name="r_edu" value="0" checked/>	<label for="reA">All</label>
+					<input type="radio" id="ren" name="r_edu" value="30" />			<label for="ren">No HS Diploma</label>
+					<input type="radio" id="reh" name="r_edu" value="31"/>			<label for="reh">Only HS</label>
+					<input type="radio" id="rea" name="r_edu" value="32"/>			<label for="rea">Some College</label>
+					<input type="radio" id="reb" name="r_edu" value="33"/>			<label for="reb">Bachelor's >=</label>
+				</div>		
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Age</span>
+					<input type="radio" id="raA" name="r_age" value="0" checked/>	<label for="raA">All</label>
+					<input type="radio" id="ray" name="r_age" value="10" />			<label for="ray">16-24</label>
+					<input type="radio" id="rao" name="r_age" value="28"/>			<label for="rao">25+</label>
+				</div>		
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Race</span>
+					<input type="radio" id="rrA" name="r_race" value="0" checked/>	<label for="rrA">All</label>
+					<input type="radio" id="rrw" name="r_race" value="1" />			<label for="rrw">White</label>
+					<input type="radio" id="rrb" name="r_race" value="3"/>			<label for="rrb">Black</label>
+					<input type="radio" id="rrh" name="r_race" value="5"/>			<label for="rrh">Hispanic</label>
+					<input type="radio" id="rra" name="r_race" value="4"/>			<label for="rra">Asian</label>
+				</div>											
+				<div class = 'radioBox'>
+					<span class = 'radioHeader'>Sex</span>
+					<input type="radio" id="rsA" name="r_sex" value="0" />	<label for="rsA">All</label>
+					<input type="radio" id="rsm" name="r_sex" value="1" checked/>			<label for="rsm">Men</label>
+					<input type="radio" id="rsw" name="r_sex" value="2"/>			<label for="rsw">Women</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<link rel="stylesheet" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/start/jquery-ui.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+<script src="jquery.verticalRadio.js"></script>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="graph.js"></script>
+<script src="wrapper.js"></script>

@@ -1,0 +1,131 @@
+orig_code	orig_text
+00	All Origins	
+01	Hispanic or Latino	
+02	Mexican American	
+06	Puerto Rican	
+07	Cuban	
+08	Central or South American	
+09	Other Hispanic or Latino	
+10	Non-Hispanic	
+
+sexs_code	sexs_text
+0	Both Sexes	
+1	Men	
+2	Women	pcts_code	pcts_text
+race_code	race_text
+
+00	All Races	
+01	White	
+03	Black or African American	
+04	Asian	
+5	Hispanic 
+6	Other
+
+education_code	education_text
+00	All educational levels	
+30	Less than a high school diploma	
+31	High school graduates, no college	
+32	Some college, no degree	
+33	College graduates	
+34	Associate degree	
+35	Less than a bachelor's degree	
+36	Some college or associate degree	
+37	Bachelor's degree only	
+38	Advanced degree	
+39	Bachelor's degree and higher
+
+vets_code	vets_text
+00	N/A	
+01	Veteran	
+03	World War II or Korean War or Vietnam Era	
+09	Gulf War Era	
+12	Veterans who served in Gulf War Era 2 (whether or not they served in Era 1)	
+13	Veterans who served in Gulf War Era 1 but not Gulf War Era 2	
+16	Other Service Periods (may include peacetime)	
+25	Nonveteran	
+
+ages_code	ages_text
+00	16 years and over	
+01	14 years and over	
+07	16 to 17 years	
+08	16 to 19 years	
+10	16 to 24 years	
+11	16 to 64 years	
+13	18 to 19 years	
+15	18 years and over	
+17	20 years and over	
+20	20 to 24 years	
+22	20 to 64 years	
+28	25 years and over	
+30	25 to 29 years	
+31	25 to 34 years	
+33	25 to 54 years	
+36	30 to 34 years	
+37	35 to 39 years	
+38	35 to 44 years	
+39	40 to 44 years	
+40	45 years and over	
+41	45 to 49 years	
+42	45 to 54 years	
+44	50 to 54 years	
+45	55 years and over	
+48	55 to 59 years	
+49	55 to 64 years	
+56	60 to 61 years	
+57	60 to 64 years	
+61	62 to 64 years	
+65	65 years and over	
+66	65 to 69 years	
+72	70 years and over	
+73	70 to 74 years	
+78	75 years and over	
+98	18 to 24 years		
+
+activity_code	activity_text
+0	N/A	
+3	Enrolled in School	
+4	Enrolled in High School	
+5	Enrolled in College	
+6	Enrolled in College Full-time	
+7	Enrolled in College Part-time	
+8	Not Enrolled	
+
+born_code	born_text
+00	N/A	
+01	Native born	
+02	Foreign born	
+03	Citizen	
+04	Non-citizen (Year of Entry)	
+05	Before 1965	
+06	1965-74	
+07	1975-84	
+08	1985-89	
+09	1990-94	
+10	1995-99	
+11	2000-04	
+12	2005	
+
+chld_code	chld_text
+00	N/A	
+01	With own children under 18	
+02	With own children 6 to 17, none younger	
+03	With own children under 6	
+04	With own children under 3	
+05	With no own children under 18	
+
+disa_code	disa_text
+00	N/A	
+01	Not disabled	
+02	Disabled person	
+
+mari_code	mari_text
+00	All marital statuses	
+01	Single (never married)	
+02	Married, spouse present	
+03	Civilian spouse present	
+05	Married, spouse absent (separated,)	
+06	Widowed	
+07	Divorced	
+08	Widowed and divorced (6 and 7 above)	
+09	Other marital status (widowed, divorced, or separated - 5, 6, and 7 above)	
+10	Married (codes 2 and 5)	

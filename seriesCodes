@@ -1,0 +1,225 @@
+ln.series columns
+series_id		lfst_code	periodicity_code	series_description										absn_code	activity_code	ages_code	class_code	duration_code	education_code	entr_code	expr_code	hheader_code	hour_code	indy_code	jdes_code	look_code	mari_code	mjhs_code	occupation_code	orig_code	pcts_code	race_code	rjnw_code	rnlf_code	rwns_code	seek_code	sexs_code	tdat_code	vets_code	wkst_code	born_code
+0 				1 			2 					3 														4 			5 				6 			7 			8 				9 				10 			11			12				13			14			15			16			17			18			19				20			21			22			23			24			25			26			27			28			29			30			31			
+LNU04034985     40			M					(unadj) Unemployment rate - 25 years and over, Asian	0			0				28			00			000				00				0			0			00				00			0000		0			00			00			00			0000 			00			00			04			00			00			00			00			0			00			00			00			00			00			00			U	          	2000	M01	2012	M11
+
+
+sexs_code	sexs_text
+0	Both Sexes	
+1	Men	
+2	Women	pcts_code	pcts_text
+race_code	race_text
+
+00	All Races	
+01	White	
+03	Black or African American	
+04	Asian	
+5	Hispanic 
+6	Other
+
+education_code	education_text
+00	All educational levels	
+30	Less than a high school diploma	
+31	High school graduates, no college	
+32	Some college, no degree	
+33	College graduates	
+34	Associate degree	
+35	Less than a bachelor's degree	
+36	Some college or associate degree	
+37	Bachelor's degree only	
+38	Advanced degree	
+39	Bachelor's degree and higher
+
+orig_code	orig_text
+00	All Origins	
+01	Hispanic or Latino	
+02	Mexican American	
+06	Puerto Rican	
+07	Cuban	
+08	Central or South American	
+09	Other Hispanic or Latino	
+10	Non-Hispanic
+
+ages_code	ages_text
+00	16 years and over	
+01	14 years and over	
+07	16 to 17 years	
+08	16 to 19 years	
+10	16 to 24 years	
+11	16 to 64 years	
+13	18 to 19 years	
+15	18 years and over	
+17	20 years and over	
+20	20 to 24 years	
+22	20 to 64 years	
+28	25 years and over	
+30	25 to 29 years	
+31	25 to 34 years	
+33	25 to 54 years	
+36	30 to 34 years	
+37	35 to 39 years	
+38	35 to 44 years	
+39	40 to 44 years	
+40	45 years and over	
+41	45 to 49 years	
+42	45 to 54 years	
+44	50 to 54 years	
+45	55 years and over	
+48	55 to 59 years	
+49	55 to 64 years	
+56	60 to 61 years	
+57	60 to 64 years	
+61	62 to 64 years	
+65	65 years and over	
+66	65 to 69 years	
+72	70 years and over	
+73	70 to 74 years	
+78	75 years and over	
+98	18 to 24 years	
+
+vets_code	vets_text
+00	N/A	
+01	Veteran	
+03	World War II or Korean War or Vietnam Era	
+09	Gulf War Era	
+12	Veterans who served in Gulf War Era 2 (whether or not they served in Era 1)	
+13	Veterans who served in Gulf War Era 1 but not Gulf War Era 2	
+16	Other Service Periods (may include peacetime)	
+25	Nonveteran	
+
+	
+
+activity_code	activity_text
+0	N/A	
+3	Enrolled in School	
+4	Enrolled in High School	
+5	Enrolled in College	
+6	Enrolled in College Full-time	
+7	Enrolled in College Part-time	
+8	Not Enrolled	
+
+born_code	born_text
+00	N/A	
+01	Native born	
+02	Foreign born	
+03	Citizen	
+04	Non-citizen (Year of Entry)	
+05	Before 1965	
+06	1965-74	
+07	1975-84	
+08	1985-89	
+09	1990-94	
+10	1995-99	
+11	2000-04	
+12	2005	
+
+chld_code	chld_text
+00	N/A	
+01	With own children under 18	
+02	With own children 6 to 17, none younger	
+03	With own children under 6	
+04	With own children under 3	
+05	With no own children under 18	
+
+disa_code	disa_text
+00	N/A	
+01	Not disabled	
+02	Disabled person	
+
+mari_code	mari_text
+00	All marital statuses	
+01	Single (never married)	
+02	Married, spouse present	
+03	Civilian spouse present	
+05	Married, spouse absent (separated,)	
+06	Widowed	
+07	Divorced	
+08	Widowed and divorced (6 and 7 above)	
+09	Other marital status (widowed, divorced, or separated - 5, 6, and 7 above)	
+10	Married (codes 2 and 5)	
+
+pcts_code	pcts_text
+00	N/A	
+01	Percent of civilian noninstitutional population	
+03	Percent of civilian labor force	
+05	Percent of employed within group	
+06	Percent of total employed	
+07	Percent of total unemployed	
+08	Percent of unemployed within group	
+11	Percent of total job seekers	
+18	Percent of total job losers	
+19	Percent of total job leavers	
+20	Percent of total reentrants	
+21	Percent of total new entrants	
+24	Percent of employed in all agri industries	
+25	Percent of employed in all nonagri industries	
+26	Percent of at work in all nonagri industries	
+27	Percent of at work in all agri industries	
+33	Percent of employed by industry	
+34	Percent of employed by occupation	
+35	Percent of at work by industry	
+36	Percent of at work by occupation	
+38	Percent of total at work	
+39	Percent of job losers on layoff	
+40	Percent of job losers for other reasons	
+46	Unemployed and discouraged workers as a percent of the labor force and discouraged workers	
+47	Unemployed and marginally attached workers as a percent of the labor force and marg attached	
+48	Unemployed and mrg attached and pt for econ reas as percent of labor force plus marg attached	
+
+lfst_code	lfst_text
+00	Civilian noninstitutional population	
+10	Civilian labor force	
+11	Full time labor force (includes persons working part time for economic reasons, both usually work fu	
+12	Part time labor force (excludes persons working part time for economic reasons)	
+13	Civilian labor force participation rate	
+14	Percent of labor force time lost	
+15	Experienced labor force	
+16	Civilian Labor Force plus discouraged workers	
+17	Civilian Labor Force plus marginally attached workers	
+20	Employed	
+21	Employed full time (includes persons working part time for economic reasons)	
+22	Employed part time (by economic/noneconomic reason)	
+23	Employment-population ratio	
+24	Employed part time (involuntary)	
+25	Employed full time (persons who usually work 35 hours or more)	
+26	Employed part time (persons who usually work less than 35 hours)	
+27	Aggregated totals employed	
+28	Employment-population ratio (Full-time Workers)	
+29	Employment-population ratio (Part-time Workers)	
+30	Unemployed	
+31	Unemployed looking for full-time work	
+32	Unemployed looking for part-time work	
+33	Aggregated totals unemployed	
+34	Unemployed plus discouraged workers	
+35	Unemployed plus marginally attached workers	
+36	Unemployed plus marginally attached workers plus employed part time for economic reasons	
+40	Unemployment rate	
+41	Unemployment rate of the full-time labor force	
+42	Unemployment rate of the part-time labor force	
+50	Not in labor force	
+60	Adjusted employment (CPS employment adjusted to CES concepts)	
+70	Labor Force Flows Employed to Employed	
+71	Labor Force Flows Unemployed to Employed	
+72	Labor Force Flows Not in Labor Force to Employed	
+73	Marginal Inflows to Employed	
+74	Labor Force Flows Employed to Unemployed	
+75	Labor Force Flows Unemployed to Unemployed	
+76	Labor Force Flows Not in Labor Force to Unemployed	
+77	Marginal Inflows to Unemployed	
+78	Labor Force Flows Employed to Not in Labor Force	
+79	Labor Force Flows Unemployed to Not in Labor Force	
+80	Labor Force Flows Not in Labor Force to Not in Labor Force	
+81	Marginal Inflows to Not in Labor Force	
+82	Employed to other Marginal Outflows	
+83	Unemployed to other Marginal Outflows	
+84	Not in Labor Force to other Marginal Outflows	
+85	Total other Marginal Outflows	
+86	Total Employed in previous month	
+87	Total Unemployed in previous month	
+88	Total Not in Labor Force in previous month	
+89	Total Marginal Inflows	
+
+periodicity_code	periodicity_text
+A	Annual	
+M	Monthly	
+Q	Quarterly	
